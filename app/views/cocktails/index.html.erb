@@ -1,6 +1,12 @@
-<% @cocktails.each do |cocktail| %>
-  <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-<% end %>
-
-
-<%= link_to "Add a cocktail", new_cocktail_path %>
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <%= render 'shared/card', { cocktail: cocktail }%>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <div class="text-center add-button">
+    <%= link_to "Add a cocktail", new_cocktail_path, class: "primary-button" %>
+  </div>
+</div>

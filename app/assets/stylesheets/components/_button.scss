@@ -1,0 +1,12 @@
+.primary-button {
+  color: $teal;
+  border: 1px solid $teal;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  &:hover {
+    color: white;
+    background-color: $teal;
+    text-decoration: none;
+  }
+}
