@@ -36,7 +36,7 @@
     <% if @cocktail.reviews.first %>
       <ul>
         <% @cocktail.reviews.each do |review| %>
-          <li><%= review.rating.times do %><i class="fa fa-star" aria-hidden="true"></i>
+          <li><% review.rating.times do %><i class="fa fa-star" aria-hidden="true"></i>
           <% end %> - <%= review.content  %>
         <% end %>
       </ul>
