@@ -1,30 +1,39 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-6">
-    <% if @cocktail.url %>
-      <img src=<%= @cocktail.url %> alt=<%= @cocktail.name %> class="cocktail-picture">
+  <div class="col-xs-12 col-md-6">
+    <% if @cocktail.photo.url %>
+      <%= cl_image_tag @cocktail.photo, height: 500, width: 300, crop: :fill %>
     <% else %>
-      <img src="https://i.pinimg.com/564x/e1/44/4c/e1444c2aefbbbaab465d896baf29703a.jpg") alt="cocktail" class="cocktail-picture">
+      <img src="https://i.pinimg.com/564x/f5/cf/23/f5cf23b323b55b7a8e5e5fa5cdeb76b6.jpg") alt="cocktail" class="cocktail-picture">
     <% end %>
   </div>
-  <div class="col-xs-12 col-sm-6">
-    <h1><%= @cocktail.name %> <small> <%= link_to edit_cocktail_path(@cocktail) do %>
+  <div class="col-xs-12 col-md-6 cocktail-details">
+    <h3><%= @cocktail.name %> <small> <%= link_to edit_cocktail_path(@cocktail) do %>
     <i class="fa fa-pencil" aria-hidden="true"></i>
     <% end %> <%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Delete #{@cocktail.name}?"} do %>
     <i class="fa fa-trash-o" aria-hidden="true"></i><% end %>
-  </small></h1>
+  </small></h3>
 
-    <h4>Ingredients:</h4>
-    <ul>
-      <% @cocktail.doses.each do |dose| %>
-        <li><%= dose.ingredient.name %>: <%= dose.description  %> <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Delete #{dose.ingredient.name}?"} do %>
-    <i class="fa fa-trash-o" aria-hidden="true"></i><% end %></li>
-      <% end %>
-    </ul>
+    <% if @cocktail.doses.first %>
+      <h5>Ingredients:</h5>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.ingredient.name %>: <%= dose.description  %> <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Delete #{dose.ingredient.name}?"} do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i><% end %></li>
+        <% end %>
+      </ul>
+    <% else %>
+    <p><em>Your delicious cocktail doesn't have any ingredient yet!</em></p>
+    <% end %>
 
     <hr>
-    <h4>Add an ingredient:</h4>
+    <h5><i class="fa fa-glass" aria-hidden="true"></i> Add an ingredient:</h5>
     <%= render 'doses/form', {cocktail: @cocktail, dose: @dose } %>
-
-    <%= link_to 'See all cocktails', root_path %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="display-back text-center">
+      <%= link_to 'See all cocktails', root_path, class: "primary-button-full button-large" %>
+    </div>
   </div>
 </div>

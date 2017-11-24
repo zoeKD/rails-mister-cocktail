@@ -1,5 +1,5 @@
 <%= simple_form_for [cocktail, dose] do |f| %>
-  <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
-  <%= f.input :description, placeholder: "6cl" %>
+  <%= f.association :ingredient, collection: Ingredient.order('name ASC'), label:false, prompt: "Choose your ingredient" %>
+  <%= f.input :description, label:false, placeholder: "Required dose: 6cl, 4 leaves..." %>
   <%= f.submit class: "btn btn-primary btn-block" %>
 <% end %>
