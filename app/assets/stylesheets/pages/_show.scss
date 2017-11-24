@@ -10,7 +10,7 @@
     margin-top: 0px;
     margin-bottom: 30px;
     }
-  h5 {
+  h4, h5 {
     margin-top: 10px;
     margin-bottom: 20px;
   }
@@ -19,4 +19,14 @@
 .display-back {
   padding-top: 80px;
   padding-bottom: 30px
+}
+
+.cocktail-review {
+  padding-top: 40px;
+}
+
+
+.radio_buttons > span {
+  display: inline;
+  margin-left:20px;
 }

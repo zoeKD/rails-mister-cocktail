@@ -14,7 +14,7 @@
   </small></h3>
 
     <% if @cocktail.doses.first %>
-      <h5>Ingredients:</h5>
+      <h4>Ingredients:</h4>
       <ul>
         <% @cocktail.doses.each do |dose| %>
           <li><%= dose.ingredient.name %>: <%= dose.description  %> <%= link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Delete #{dose.ingredient.name}?"} do %>
@@ -28,6 +28,25 @@
     <hr>
     <h5><i class="fa fa-glass" aria-hidden="true"></i> Add an ingredient:</h5>
     <%= render 'doses/form', {cocktail: @cocktail, dose: @dose } %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 cocktail-review">
+    <h4>Reviews:</h4>
+    <% if @cocktail.reviews.first %>
+      <ul>
+        <% @cocktail.reviews.each do |review| %>
+          <li><%= review.rating.times do %><i class="fa fa-star" aria-hidden="true"></i>
+          <% end %> - <%= review.content  %>
+        <% end %>
+      </ul>
+    <% else %>
+    <p><em>Your delicious cocktail doesn't have any review yet!</em></p>
+    <% end %>
+    <hr>
+    <h5><i class="fa fa-heart" aria-hidden="true"></i> Leave an review:</h5>
+    <%= render 'reviews/form', {cocktail: @cocktail, review: @review } %>
+  </div>
   </div>
 </div>
 <div class="row">

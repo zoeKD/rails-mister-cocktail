@@ -6,6 +6,11 @@
   color: white;
   position: relative;
   margin-bottom: 30px;
+  opacity: 0.9;
+  transition: 0.5s opacity ease;
+  &:hover {
+    opacity: 1;
+  }
 }
 .card-user {
   position: absolute;

@@ -1,9 +1,9 @@
 <%= link_to cocktail_path(cocktail) do %>
 
   <% if cocktail.photo.url %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo %>');">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo %>');">
   <% else %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://i.pinimg.com/564x/f5/cf/23/f5cf23b323b55b7a8e5e5fa5cdeb76b6.jpg');">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('https://i.pinimg.com/564x/f5/cf/23/f5cf23b323b55b7a8e5e5fa5cdeb76b6.jpg');">
   <% end %>
 
     <div class="card-category"><i class="fa fa-heart" aria-hidden="true"></i></div>

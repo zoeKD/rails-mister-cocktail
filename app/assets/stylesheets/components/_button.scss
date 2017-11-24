@@ -4,6 +4,7 @@
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 14px;
+  transition: 0.5s background-color ease;
   &:hover {
     color: white;
     background-color: $teal;
@@ -17,14 +18,16 @@
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 14px;
+  border: 1px solid $teal;
+  transition: 0.5s background-color ease;
   &:hover {
     color: $teal;
-    border: 1px solid $teal;
+    background-color: white;
     text-decoration: none;
   }
 }
 
 .button-large {
-  padding: 20px 30px;
+  padding: 10px 30px;
   font-size: 16px;
 }
