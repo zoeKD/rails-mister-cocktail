@@ -23,12 +23,8 @@
 
     <hr>
     <h4>Add an ingredient:</h4>
-    <%= simple_form_for [@cocktail, Dose.new] do |f| %>
-      <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
-      <%= f.input :description %>
-      <%= f.submit class: "btn btn-primary btn-block" %>
-    <% end %>
+    <%= render 'doses/form', {cocktail: @cocktail, dose: @dose } %>
 
-    <%= link_to 'See all cocktails', cocktails_path %>
+    <%= link_to 'See all cocktails', root_path %>
   </div>
 </div>

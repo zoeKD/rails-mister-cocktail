@@ -11,6 +11,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 
+ruby '2.3.5'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
