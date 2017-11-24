@@ -10,3 +10,16 @@
     text-decoration: none;
   }
 }
+
+.primary-button-full {
+  color: white;
+  background-color: $teal;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  &:hover {
+    color: $teal;
+    border: 1px solid $teal;
+    text-decoration: none;
+  }
+}
